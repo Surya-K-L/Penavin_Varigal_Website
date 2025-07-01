@@ -1,0 +1,388 @@
+/* Base styles */
+body {
+  font-family: Arial, sans-serif;
+  background: white;
+  margin: 0;
+  padding-top: 60px; /* space for fixed navbar */
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+/* Navbar styles */
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 60px;
+  background-color: #333;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 20px;
+  z-index: 1000;
+  transition: all 0.3s ease;
+}
+
+.navbar .logo {
+  font-size: 1.2rem;
+  font-weight: bold;
+}
+
+.navbar .nav-links {
+  list-style: none;
+  display: flex;
+  gap: 50px;
+  margin: 0;
+  padding: 0;
+}
+
+.navbar .nav-links li a {
+  color: white;
+  text-decoration: none;
+  font-size: 1rem;
+  font-weight: bold;
+} 
+
+.navbar.scrolled{
+  background: rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+  color: black;
+  transition: all 0.3s ease-in-out;
+}
+
+.navbar.scrolled .nav-links li a {
+  color: black; /* Change text to dark on light glass background */
+}
+
+/* About section */
+
+.about-content {
+  position: relative;
+  max-width: 800px;
+  margin: auto;
+  padding: 5vw 4vw; /* Use relative padding for responsiveness */
+  font-size: 1.1rem;
+  line-height: 2.5;
+  color: black;
+  z-index: 1;
+  overflow: hidden;
+}
+
+/* Background image with controlled opacity */
+.about-content::before {
+  content: "";
+  position: absolute;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background-image: url('backgroundimages/Penavin_Varigal.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  opacity: 0.1;
+  z-index: -1;
+}
+
+#poems{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 25px;
+}
+
+/*new about content*/
+.about-content {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  padding: 40px 20px;
+  gap: 20px;
+}
+
+.about-text {
+  flex: 1 1 300px;
+  min-width: 280px;
+}
+
+.about-image {
+  flex: 1 1 100px;
+  text-align: center;
+}
+
+.about-image img {
+  max-width: 80%;
+  margin-top: 120px;
+  height: auto;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+  filter: brightness(1.1) contrast(1.1) saturate(1.2);
+}
+
+
+.about-image img:hover {
+  transform: scale(1.05);
+  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.25);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .about-content {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .about-text, .about-image {
+    flex: 1 1 100%;
+  }
+}
+
+/* Responsive typography and padding adjustments */
+@media (max-width: 768px) {
+  .about-content {
+    padding: 6vw 5vw;
+    font-size: 1rem;
+    line-height: 1.8;
+  }
+  .author{
+    padding-left:300px;
+  }
+}
+
+@media (max-width: 480px) {
+  .about-content {
+    padding: 7vw 5vw;
+    font-size: 0.95rem;
+    line-height: 1.7;
+  }
+}
+
+/* Section headings */
+h1 {
+  text-align: center;
+  padding: 20px;
+}
+
+/* Gallery styles */
+.gallery {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 80px;
+  padding: 20px;
+  background-color:#333;
+}
+
+.gallery img {
+  width: 200px;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: transform 0.2s;
+}
+
+.gallery img:hover {
+  transform: scale(1.05);
+}
+
+/* Image modal overlay */
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  backdrop-filter: blur(8px);
+  background: rgba(255, 255, 255, 0.1);
+  display: none;
+  justify-content: center;
+  align-items: center;
+  z-index: 1001;
+}
+
+/* Glassmorphism card in overlay */
+.card {
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: 20px;
+  padding: 20px;
+  box-shadow: 0 8px 32px rgba(31, 38, 135, 0.37);
+  backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  position: relative;
+  max-width: 90%;
+  max-height: 90%;
+}
+
+.card img {
+  width: 100%;
+  height: 500px;
+  border-radius: 15px;
+}
+
+#closeBtn {
+  position: absolute;
+  top: 10px;
+  right: 20px;
+  font-size: 24px;
+  cursor: pointer;
+  color: black;
+  font-weight: bold;
+}
+
+/* Responsive: Mobile View */
+@media screen and (max-width: 600px) {
+  .navbar {
+    flex-direction: row;
+    height: auto;
+    padding: 10px 20px;
+  }
+
+  .nav-links {
+    flex-direction: row;
+    justify-content: center;
+    gap: 30px;
+  }
+
+  .logo {
+    font-size: 1rem;
+    display: none;
+  }
+  #poems{
+    margin-top: 100px;
+  }
+
+  body {
+    padding-top: 70px; /* Adjust space below navbar on mobile */
+    padding-bottom: 0;
+  }
+
+  /* Responsive gallery: 2 images per row */
+  .gallery {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px;
+    padding: 10px;
+  }
+
+  .gallery img {
+    width: 100%;
+    height: 150px;
+  }
+
+  .card img {
+    height: auto;
+    max-height: 80vh;
+  }
+}
+#achievements
+{
+  display: flex;
+  flex-direction: row;
+  background-color:white;
+  width:auto;
+  justify-content: center;
+}
+
+/*contact section*/
+.contact-section {
+  padding: 50px 20px;
+  background:white;
+  text-align: center;
+  border-top: 2px solid #ddd;
+}
+
+.contact-section h2 {
+  font-size: 2.5em;
+  color:black;
+  margin-bottom: 20px;
+}
+
+.contact-section p {
+  font-size: 1.2em;
+  color:black;
+  margin-bottom: 30px;
+}
+
+.social-icons {
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  flex-wrap: wrap;
+}
+
+.social-icons .icon {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 1.1em;
+  color: black;
+  text-decoration: none;
+  padding: 10px 20px;
+  border-radius: 25px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.social-icons .whatsapp {
+  background-color: #25D366;
+}
+
+.social-icons .icon i {
+  font-size: 1.5em;
+}
+
+.social-icons .icon:hover {
+  transform: scale(1.05);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+.social-icons .instagram {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 14px 26px;
+  font-size: 18px;
+  font-weight: 600;
+  color:black;
+  border-radius: 50px;
+  text-decoration: none;
+  background: radial-gradient(circle at 30% 107%, 
+              #fdf497 0%, 
+              #fdf497 5%, 
+              #fd5949 45%, 
+              #d6249f 60%, 
+              #285AEB 90%);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.25);
+  position: relative;
+  overflow: hidden;
+  transition: all 0.3s ease-in-out;
+}
+
+.social-icons .instagram::before {
+  content: '';
+  position: absolute;
+  top: -8px;
+  left: -8px;
+  right: -8px;
+  bottom: -8px;
+  background: inherit;
+  filter: blur(20px);
+  opacity: 0.5;
+  z-index: -1;
+  border-radius: 60px;
+}
+
+.social-icons .instagram:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.4);
+}
+
+

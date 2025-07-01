@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Penavin Varigal</title>
+  <link rel="stylesheet" href="styles.css" />
+  
+</head>
+<body>
+  <!-- Navbar -->
+  <nav class="navbar">
+    <div class="logo">Penavin Varigal</div>
+    <ul class="nav-links">
+      <li><a href="#home">Home</a></li>
+      <li><a href="#poem">Poems</a></li>
+      <li><a href="#achieve">Achievements</a></li>
+      <li><a href="#about">Contact</a></li>
+    </ul>
+  </nav>
+
+  <div class="about-content" id="home">
+    <div class="about-text">
+      <h1>Penavin Varigal</h1>
+      <p>
+        <strong>Penavin Varigal</strong> is a beautiful visual expression of Tamil poetry and emotions. 
+        This page aims to celebrate the power of words and bring poetic art to life through visual storytelling.
+      </p>
+      <p>
+        Each image in the gallery represents a verse, an emotion, or a memory. Whether you're here to admire the art, read soulful poetry, or just explore, I hope it leaves a lasting impression.
+      </p>
+      <p>
+        Created with love and passion for the Tamil language, literature, and culture.
+      </p>
+      <p class="author" style="margin-top: 40px;"><em>- Surya K L</em></p>
+    </div>
+    <div class="about-image">
+      <img src="backgroundimages/SuryaKL.jpg" alt="About Image" />
+    </div>
+  </div>
+  
+  <!-- Home Heading -->
+  <h1 id="poem"></h1>
+   <p id="poems"><strong>Poems</strong></p>
+
+  <!-- Gallery Section -->
+  <div class="gallery">
+    <script>
+      for (let i = 1; i <= 100; i++) {
+        document.write(`<img src="images/Penavin_Varigal_${i}.jpg" alt="Image ${i}" class="gallery-img" />`);
+      }
+    </script>
+  </div>
+
+  <!-- card view  -->
+  <div class="overlay" id="overlay">
+    <div class="card">
+      <span id="closeBtn">&times;</span>
+      <img id="cardImg" src="" alt="Selected" />
+    </div>
+  </div>
+  
+  <h1 id="achieve"></h1>
+  <p id="achievements" style="padding-top:0px"><strong style="font-size: 25px;">Achievements</strong></p>
+  <div class="gallery">
+    <script>
+      for (let i = 1; i <=10; i++) {
+        document.write(`<img src="achievements/image${i}.png" alt="Image ${i}" class="gallery-img" />`);
+      }
+    </script>
+  </div>
+
+  <!-- Contact Section -->
+<section class="contact-section" id="about">
+  <h2>Contact</h2>
+  <p>If you would like to collab and write poems connect me through</p>
+
+  <div class="social-icons">
+    <a href="https://wa.me/918248709708" target="_blank" class="icon whatsapp">
+      <i class="fab fa-whatsapp"></i> WhatsApp
+    </a>
+    <a href="https://www.instagram.com/penavin_varigal" target="_blank" class="icon instagram">
+      <i class="fab fa-instagram"></i> Instagram
+    </a>
+  </div>
+</section>
+
+<script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+<script>
+  window.addEventListener("scroll", function () {
+    const navbar = document.querySelector(".navbar");
+    if (window.scrollY > 50) {
+      navbar.classList.add("scrolled");
+    } else {
+      navbar.classList.remove("scrolled");
+    }
+  });
+</script>
+
+  <script src="script.js"></script>
+</body>
+</html>
