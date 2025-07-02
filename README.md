@@ -15,12 +15,12 @@ https://penavin-varigal-website-g4xo.vercel.app/
 ## 🧩 Project Structure
 
 Penavin_Varigal_Website/
-├── index.html
-├── about.html
-├── styles.css
-├── script.js
-└── images/
-    └── Penavin_Varigal_1.jpg, Penavin_Varigal_2.jpg, … Penavin_Varigal_100.jpg
+    ├── index.html
+    ├── about.html
+    ├── styles.css
+    ├── script.js
+    └── images/
+            └── Penavin_Varigal_1.jpg, Penavin_Varigal_2.jpg, … Penavin_Varigal_100.jpg
 
 
 
