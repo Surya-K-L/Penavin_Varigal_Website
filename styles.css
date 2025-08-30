@@ -327,7 +327,7 @@ h1 {
   transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-.social-icons .whatsapp {
+.social-icons .mail {
   background-color: #FFFAFA;
 }
 
@@ -384,6 +384,7 @@ h1 {
   transform: translateY(-3px);
   box-shadow: 0 12px 30px rgba(0, 0, 0, 0.4);
 }
+
 
 
 
